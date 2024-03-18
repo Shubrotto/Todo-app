@@ -1,0 +1,85 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--body-bg-color);
+}
+
+.wrapper {
+  background: var(--bg-color);
+  width: 50%;
+  height: auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.form_container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.add_btn {
+  padding: 6px 20px;
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border-right: 0;
+  border-bottom: 0;
+  background: var(--body-bg-color);
+}
+
+.todo_input {
+  padding: 5px 20px;
+}
+
+.todo_container {
+  display: flex;
+  align-items: center;
+  background: #000000;
+  padding: 10px;
+}
+
+.edit_btn {
+  color: white;
+  width: 4%;
+  height: 4%;
+}
+
+.todo_wrapper {
+  color: white;
+  width: 98%;
+  margin: 0 10px;
+}
+
+.todo_wrapper h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.todo_wrapper p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.delete_btn {
+  color: #ff4b5b;
+  border: 1px solid;
+  width: 4%;
+  height: 4%;
+  cursor: pointer;
+}

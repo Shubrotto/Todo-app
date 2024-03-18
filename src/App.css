@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --body-bg-color: #8ed1fc;
+  --bg-color: rgb(80, 78, 78);
+  --text-color: white;
+  --border-color: white;
+
+  --body-bg-color-md: #8ed1fc;
+  --bg-color-md: white;
+  --text-color-md: rgb(80, 78, 78);
+  --border-color-md: rgb(80, 78, 78);
+}
