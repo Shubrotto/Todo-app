@@ -6,20 +6,17 @@ export const todoSlice = createSlice({
   initialState: [],
   reducers: {
     add: (state, action) => {
-      const todo = {
-        id: uuidv4(),
-        title: action.payload,
-      };
-      console.log(todo);
-      console.log(action.payload);
-      state.push(todo);
+      state.push({ id: uuidv4(), title: action.payload });
     },
     del: (state, action) => {
+      return state.filter((todo) => todo.id !== action.payload.id);
+    },
+    edit: (state, action) => {
       return state.filter((todo) => todo.id !== action.payload.id);
     },
   },
 });
 
-export const { add, del } = todoSlice.actions;
+export const { add, del, edit } = todoSlice.actions;
 
 export default todoSlice.reducer;

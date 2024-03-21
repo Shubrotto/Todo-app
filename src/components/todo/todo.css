@@ -88,6 +88,6 @@
   cursor: pointer;
 }
 
-.delete_btn {
-  color: white;
+.delete_btn:hover {
+  color: red;
 }

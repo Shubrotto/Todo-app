@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./todo.css";
-import { add, del } from "../../features/todoSlice";
+import { add, del, edit } from "../../features/todoSlice";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import { useState } from "react";
@@ -12,7 +12,7 @@ const Todo = () => {
   });
 
   const [title, setTitle] = useState({});
-  console.log(todos.map((todo) => todo));
+  console.log(todos.map((todo) => todo.id));
   const dispatch = useDispatch();
 
   const handleAddTodo = () => {
@@ -33,7 +33,6 @@ const Todo = () => {
             className="todo_input"
             type="text"
             placeholder="write todo title..."
-            // value={todos}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>{" "}
@@ -41,13 +40,16 @@ const Todo = () => {
           <div className="input_container">
             {todos?.map((item) => (
               <div key={item?.id} className="todo_wrapper">
-                <FaEdit className="edit_btn" />
+                <FaEdit
+                  className="edit_btn"
+                  onClick={() => dispatch(edit({ id: item.id }))}
+                />
                 <div className="todo_item">
                   <span>{item?.title}</span>{" "}
                 </div>
                 <AiFillDelete
                   className="delete_btn"
-                  onClick={() => dispatch(del(item?.id))}
+                  onClick={() => dispatch(del({ id: item.id }))}
                 />
               </div>
             ))}
