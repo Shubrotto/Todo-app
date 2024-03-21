@@ -1,5 +1,5 @@
 .container {
-  height: 100vh;
+  height: auto;
   width: 100%;
   padding: 50px;
   display: flex;
@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 20px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -45,41 +45,49 @@
 
 .todo_input {
   padding: 5px 20px;
+  width: 100%;
 }
 
 .todo_container {
-  display: flex;
-  align-items: center;
   background: #000000;
-  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
 }
 
 .edit_btn {
   color: white;
-  width: 4%;
-  height: 4%;
+  font-size: 20px;
 }
 
 .todo_wrapper {
   color: white;
-  width: 98%;
-  margin: 0 10px;
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
 }
 
-.todo_wrapper h4 {
+.todo_item {
   font-size: 16px;
   font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 2%;
 }
 
-.todo_wrapper p {
+.todo_item span {
   font-size: 14px;
   font-weight: 400;
 }
 
 .delete_btn {
-  color: #ff4b5b;
-  border: 1px solid;
-  width: 4%;
-  height: 4%;
+  color: white;
+  font-size: 20px;
   cursor: pointer;
+}
+
+.delete_btn {
+  color: white;
 }

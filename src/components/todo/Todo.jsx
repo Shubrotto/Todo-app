@@ -1,32 +1,57 @@
+// import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./todo.css";
+import { add, del } from "../../features/todoSlice";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
+import { useState } from "react";
 
 const Todo = () => {
+  const todos = useSelector((state) => {
+    return state.todos;
+  });
+
+  const [title, setTitle] = useState({});
+  console.log(todos.map((todo) => todo));
+  const dispatch = useDispatch();
+
+  const handleAddTodo = () => {
+    dispatch(add(title));
+    setTitle(null);
+    console.log("object");
+  };
+
   return (
     <div className="container">
       <div className="wrapper">
         <h1 className="title">Todo app</h1>
         <div className="form_container">
-          <button className="add_btn">Add</button>
+          <button className="add_btn" onClick={() => handleAddTodo()}>
+            Add
+          </button>
           <input
             className="todo_input"
             type="text"
             placeholder="write todo title..."
+            // value={todos}
+            onChange={(e) => setTitle(e.target.value)}
           />
-          <input
-            className="todo_input"
-            type="text"
-            placeholder="write todo description..."
-          />
-        </div>
+        </div>{" "}
         <div className="todo_container">
-          <FaEdit className="edit_btn" />
-          <div className="todo_wrapper">
-            <h4>todo title</h4>
-            <p>todo desc</p>
+          <div className="input_container">
+            {todos?.map((item) => (
+              <div key={item?.id} className="todo_wrapper">
+                <FaEdit className="edit_btn" />
+                <div className="todo_item">
+                  <span>{item?.title}</span>{" "}
+                </div>
+                <AiFillDelete
+                  className="delete_btn"
+                  onClick={() => dispatch(del(item?.id))}
+                />
+              </div>
+            ))}
           </div>
-          <AiFillDelete className="delete_btn" />
         </div>
       </div>
     </div>
